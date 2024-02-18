@@ -39,10 +39,6 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass 
-      - name: Install postcss
-        run: npm i -D postcss postcss-cli autoprefixer
-      - name: install npx
-        run: npm install -g npx
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -52,6 +48,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Install postcss
+        run: npm i -D postcss postcss-cli autoprefixer        
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
