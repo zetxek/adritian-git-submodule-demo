@@ -1,4 +1,4 @@
-baseURL = "https://raditian-hugo.radity.com/"
+baseURL = "https://www.adrianmoreno.info"
 languageCode = "en-us"
 theme = "adritian-free-hugo-theme"
 
@@ -65,11 +65,11 @@ theme = "adritian-free-hugo-theme"
   homepageExperienceCount = 6
   
   [params.logo]
-    text1 = "Andreas"
-    text2 = "Ellure"
+    text1 = "Cool"
+    text2 = "Name"
 
   [params.footer]
-      copyright = "© Raditian. All rights reserved."
+      copyright = "© Adritian. Free Hugo theme by Adrián Moreno Peña."
       [params.footer.radity_logo]
         x = "img/general/design-and-code-radity.png"
         _2x = "img/general/design-and-code-radity@2x.png"
