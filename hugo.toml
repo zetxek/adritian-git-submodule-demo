@@ -1,4 +1,4 @@
-baseURL = "https://www.adrianmoreno.info"
+baseURL = "https://zetxek.github.io/adritian-demo/"
 languageCode = "en-us"
 theme = "adritian-free-hugo-theme"
 
@@ -35,10 +35,16 @@ theme = "adritian-free-hugo-theme"
   URL = "#portfolio"
   weight = 3
 
+
+  [[menu.header]]
+  name = "Blog"
+  URL = "/blog"
+  weight = 4
+
   [[menu.header]]
   name = "Contact"
   URL = "#contact"
-  weight = 4
+  weight = 5 
 
 
   [[menu.footer]]
@@ -60,10 +66,17 @@ theme = "adritian-free-hugo-theme"
 [params]
 
   sections = ["showcase", "about", "education", "experience", "client-and-work", "testimonial", "contact", "newsletter"]
-
-  googleTagManagerID = "GTM-000000" # Google Analytics works with Google Tag Manager
   homepageExperienceCount = 6
-  
+
+  ## by default there are no scripts added  
+  [params.analytics]
+    [params.analytics.google_analytics]
+      code = "UA-XXXXX-Y"
+      enabled = false
+    [params.analytics.google_tag_manager]
+      code = "GTM-XXXXX"
+      enabled = false
+
   [params.logo]
     text1 = "Cool"
     text2 = "Name"
