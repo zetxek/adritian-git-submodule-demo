@@ -30,7 +30,7 @@ jobs:
 
     - name: Setup git
       run: |
-        LATEST_TAG=$(git --git-dir=themes/adritian-free-hugo-theme/.git describe --tags)
+        LATEST_TAG=$(git --git-dir=themes/adritian-free-hugo-theme/.git describe --tags --always)
         BRANCH_NAME="theme-update/update-theme-to-$LATEST_TAG"
         
         git config --global user.name 'Git bot'
