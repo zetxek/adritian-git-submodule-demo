@@ -40,24 +40,18 @@ jobs:
         git config --global user.email 'bot@noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    - name: Create branch
-      run: |
         # Create a new feature branch for the changes.
         git checkout -b $BRANCH_NAME
 
-    - name: Copy exampleSite config
-      run: |
+        # Copy content
         cp themes/adritian-free-hugo-theme/exampleSite/hugo.toml hugo.toml
-    
-    - name: Update url
-      run: |
+        # Update URL
         sed -i -e "s/\"https\:\/\/www\.adrianmoreno\.info\"/\"https\:\/\/adritian-demo\.vercel\.app\/\"/g" hugo.toml
 
-    - name: Commit update
-      run: |
+        # Commit changes
         git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
     
-    - name: Send pull-request
-      run: gh pr create -B main -H $BRANCH_NAME --title 'Merge $BRANCH_NAME into main' --body 'Created by Github action'
+        # Create PR
+        gh pr create -B main -H $BRANCH_NAME --title 'Merge $BRANCH_NAME into main' --body 'Created by Github action'
       env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
