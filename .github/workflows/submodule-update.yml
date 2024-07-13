@@ -37,6 +37,10 @@ jobs:
     - name: Copy exampleSite config
       run: |
         cp themes/adritian-free-hugo-theme/exampleSite/hugo.toml hugo.toml
+    
+    - name: Update url
+      run: |
+        sed -i -e "s/\"https\:\/\/www\.adrianmoreno\.info\"/\"https\:\/\/adritian-demo\.vercel\.app\/\"/g" hugo.toml
 
     - name: Commit update
       run: |
