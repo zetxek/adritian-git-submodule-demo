@@ -35,7 +35,8 @@ jobs:
 
         echo "Latest tag: $LATEST_TAG"
         echo "Branch name: $BRANCH_NAME"
-        
+
+        git config --global --add --bool push.autoSetupRemote true
         git config --global user.name 'Git bot'
         git config --global user.email 'bot@noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
@@ -52,6 +53,10 @@ jobs:
         git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
     
         # Create PR
-        gh pr create -B main -H $BRANCH_NAME --title 'Merge $BRANCH_NAME into main' --body 'Created by Github action'
+        gh pr create \
+          -B main \
+          -H $BRANCH_NAME \
+          --title "[auto] Update theme" \
+          --body "Updating theme to https://github.com/zetxek/adritian-free-hugo-theme/commit/$LATEST_TAG. Created by Github action https://github.com/zetxek/adritian-demo/actions/workflows/submodule-update.yml"
       env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
