@@ -53,6 +53,6 @@ jobs:
         git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
     
         # Create PR
-        gh pr create -B main -H $BRANCH_NAME --title 'Merge $BRANCH_NAME into main' --body 'Created by Github action'
+        gh pr create -B main -H $BRANCH_NAME --title "[auto] Update theme" --body 'Created by Github action https://github.com/zetxek/adritian-demo/actions/workflows/submodule-update.yml'
       env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
