@@ -28,7 +28,7 @@ jobs:
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
-    - name: Setup git
+    - name: Update and open PR
       run: |
         LATEST_TAG=$(git --git-dir=themes/adritian-free-hugo-theme/.git describe --tags --always)
         BRANCH_NAME="theme-update/update-theme-to-$LATEST_TAG"
