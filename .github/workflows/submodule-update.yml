@@ -17,7 +17,7 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         token: ${{ secrets.CI_TOKEN }}
         submodules: true
@@ -28,9 +28,30 @@ jobs:
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
-    - name: Commit update
+    - name: Update and open PR
       run: |
+        LATEST_TAG=$(git --git-dir=themes/adritian-free-hugo-theme/.git describe --tags --always)
+        BRANCH_NAME="theme-update/update-theme-to-$LATEST_TAG"
+
+        echo "Latest tag: $LATEST_TAG"
+        echo "Branch name: $BRANCH_NAME"
+        
         git config --global user.name 'Git bot'
         git config --global user.email 'bot@noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+        # Create a new feature branch for the changes.
+        git checkout -b $BRANCH_NAME
+
+        # Copy content
+        cp themes/adritian-free-hugo-theme/exampleSite/hugo.toml hugo.toml
+        # Update URL
+        sed -i -e "s/\"https\:\/\/www\.adrianmoreno\.info\"/\"https\:\/\/adritian-demo\.vercel\.app\/\"/g" hugo.toml
+
+        # Commit changes
         git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
+    
+        # Create PR
+        gh pr create -B main -H $BRANCH_NAME --title 'Merge $BRANCH_NAME into main' --body 'Created by Github action'
+      env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
