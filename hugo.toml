@@ -70,7 +70,7 @@ theme = "adritian-free-hugo-theme"
 
   sections = ["showcase", "about", "education", "experience", "client-and-work", "testimonial", "contact", "newsletter"]
 
-  homepageExperienceCount = 2
+  homepageExperienceCount = 6
 
   [params.google_analytics]
       code = "UA-XXXXX-Y"
