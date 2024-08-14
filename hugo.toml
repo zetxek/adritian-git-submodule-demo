@@ -36,19 +36,14 @@ theme = "adritian-free-hugo-theme"
   weight = 3
 
   [[menu.header]]
-  name = "Experience"
-  URL = "#experience"
-  weight = 4
-
-  [[menu.header]]
   name = "Blog"
   URL = "/blog"
-  weight = 5
+  weight = 4
 
   [[menu.header]]
   name = "Contact"
   URL = "#contact"
-  weight = 6
+  weight = 5
 
   [[menu.footer]]
   name = "About"
@@ -85,3 +80,7 @@ theme = "adritian-free-hugo-theme"
 
   [params.footer]
       copyright = "© Adritian. Free Hugo theme by Adrián Moreno Peña."
+      [params.footer.radity_logo]
+        x = "img/general/design-and-code-radity.png"
+        _2x = "img/general/design-and-code-radity@2x.png"
+        alt = "Design & Code - Radity"
