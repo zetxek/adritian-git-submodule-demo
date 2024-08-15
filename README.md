@@ -5,3 +5,6 @@ Demo for the free Hugo theme Adritian (https://github.com/zetxek/adritian-free-h
 The theme is added as a submodule - and this site is updated automatically on every new push on the theme repo (via a [github action](https://github.com/zetxek/adritian-free-hugo-theme/actions/workflows/update-demo.yml).
 
 Find instructions about how to set the repository up in the [theme repository](https://github.com/zetxek/adritian-free-hugo-theme), as well as improvements or issues.
+
+![Screenshot_15-8-2024_95754_adritian-demo vercel app](https://github.com/user-attachments/assets/bdbe5a11-3283-49fd-90ab-a823fe9f1c59)
+
