@@ -2,6 +2,11 @@ baseURL = "https://adritian-demo.vercel.app/"
 languageCode = "en-us"
 theme = "adritian-free-hugo-theme"
 
+# To use PurgeCSS
+# https://purgecss.com/guides/hugo.html
+[build]
+  writeStats = true
+
 # Plugins
 [params.plugins]
 
