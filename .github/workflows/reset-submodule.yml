@@ -10,11 +10,11 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v4
-            with:
-                submodules: true
+          with:
+            submodules: true
 
         - name: Reset submodule
-            run: |
+          run: |
                 cd themes/adritian-free-hugo-theme
                 git checkout main
                 cd ../..
