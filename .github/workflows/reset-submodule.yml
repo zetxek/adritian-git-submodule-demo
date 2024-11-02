@@ -1,0 +1,23 @@
+name: Reset Submodule
+
+on:
+    workflow_dispatch:
+
+jobs:
+    reset-submodule:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+            with:
+                submodules: true
+
+        - name: Reset submodule
+            run: |
+                cd themes/adritian-free-hugo-theme
+                git checkout main
+                cd ../..
+                git add themes/adritian-free-hugo-theme
+                git commit -m "Reset submodule to main"
+                git push
