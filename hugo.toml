@@ -159,12 +159,11 @@ theme = "adritian-free-hugo-theme"
   # CSS Plugins
   [[params.plugins.css]]
   URL = "css/main.css"
-
-  [[params.plugins.css]]
-  URL = "css/adritian-icons.css"
   [[params.plugins.css]]
   URL = "css/custom.css"
-
+  [[params.plugins.css]]
+  URL = "css/adritian-icons.css"
+  
   # JS Plugins
   [[params.plugins.js]]
   URL = "js/rad-animations.js"
