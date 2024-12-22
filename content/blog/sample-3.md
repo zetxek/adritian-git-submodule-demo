@@ -3,9 +3,14 @@ title = 'Sample blog content 3'
 date = 2024-06-24T14:38:33+02:00
 draft = false
 type = 'blog'
+
+[images]
+    featured_image = '/img/blog/feature-sample-3.png'
 +++
 
 Sample blog content. Like a lorem ipsum but saying something more interesting.
+
+![Example image](/img/blog/feature-sample-3.png)
 
 Welcome to the world of "Content Ipsum," the fresh alternative to the classic lorem ipsum. It's the perfect blend for designers and writers who crave a dash of creativity and meaning in their placeholder text. Imagine a text that not only fills the space but also sparks the imagination, a text that weaves tales of innovation, inspiration, and the endless possibilities that creativity brings.
 
