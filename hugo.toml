@@ -33,7 +33,6 @@ theme = "adritian-free-hugo-theme"
   footer = false
 
 [languages]
-
   [languages.en]
     disabled = false
     languageCode = 'en'
@@ -180,6 +179,7 @@ theme = "adritian-free-hugo-theme"
 # Plugins
 [params.plugins]
 
+  # CSS Plugins
   [[params.plugins.css]]
   URL = "css/custom.css"
   [[params.plugins.css]]
@@ -196,6 +196,7 @@ theme = "adritian-free-hugo-theme"
   # SCSS Plugins
   [[params.plugins.scss]]
   URL = "scss/adritian.scss"
+
 
 # theme/color style 
 [params.colorTheme]
