@@ -25,7 +25,7 @@ theme = "adritian-free-hugo-theme"
   # and add the tracking code (UA-something for analytics, GTM-something for tag manager)
   [params.analytics.googleAnalytics]
       code = "UA-XXXXX-Y"
-      enabled = true
+      enabled = false
   [params.analytics.googleTagManager]
       code = "GTM-XXXXX"
       enabled = false
@@ -83,21 +83,10 @@ theme = "adritian-free-hugo-theme"
         URL = "#portfolio"
         weight = 3
 
-
-#      [[languages.en.menus.footer]]
-#        name = "Source Code"
-#        URL = "https://github.com/zetxek/adritian-free-hugo-theme"
-#        weight = 4
-
-      [[languages.en.menus.footer]]
-        name = "Experience"
-        URL = "/experience"
-        weight = 5
-
       [[languages.en.menus.footer]]
         name = "Contact"
         URL = "#contact"
-        weight = 6
+        weight = 4
 
 
   [languages.es]
