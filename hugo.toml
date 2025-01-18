@@ -228,3 +228,4 @@ sidebarWidth = "25" # percentage width of the sidebar
 showCategories = true
 showRecentPosts = true
 recentPostCount = 5
+listStyle = "summary" # options: simple, summary
