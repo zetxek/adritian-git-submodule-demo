@@ -1,6 +1,6 @@
 {
     "buildCommand": "echo VERCEL_URL=$VERCEL_URL ; hugo --minify --baseURL=\"https://$VERCEL_URL/\"",
-    "installCommand": "dnf install golang",
+    "installCommand": "dnf -y install golang",
     "cleanUrls": true,
     "headers": [
         {
