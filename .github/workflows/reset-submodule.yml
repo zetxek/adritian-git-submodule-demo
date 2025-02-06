@@ -1,4 +1,4 @@
-name: Reset Submodule
+name: Update submodule to latest
 
 on:
     workflow_dispatch:
@@ -24,5 +24,5 @@ jobs:
                 git checkout main
                 cd ../..
                 git add themes/adritian-free-hugo-theme
-                git commit -m "Reset submodule to main"
+                git commit -m "Update theme submodule to main"
                 git push
