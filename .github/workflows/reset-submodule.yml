@@ -18,13 +18,26 @@ jobs:
             submodules: recursive
             fetch-depth: 0
 
-        - name: Reset submodule
+        - name: Debug info
           run: |
+            echo "Repository: ${{ github.repository }}"
+            git remote -v
+
+        - name: Reset submodule
+          env:
+            GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+          run: |
+                # Configure git
                 git config --global --add --bool push.autoSetupRemote true
                 git config --global user.name 'github-actions[bot]'
                 git config --global user.email 'github-actions[bot]@users.noreply.github.com'
                 
+                # Set the remote with explicit authentication
+                git remote remove origin
+                git remote add origin "https://${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+                
                 # Ensure we're on the right branch
+                git fetch origin main
                 git checkout main
                 
                 # Update submodule
