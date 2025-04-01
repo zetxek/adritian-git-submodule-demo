@@ -3,6 +3,9 @@ name: Update submodule to latest
 on:
     workflow_dispatch:
 
+permissions:
+  contents: write
+  
 jobs:
     reset-submodule:
         runs-on: ubuntu-latest
